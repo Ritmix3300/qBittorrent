@@ -1472,10 +1472,10 @@ void MainWindow::loadSessionStats()
 
     // update global information
 #ifdef Q_OS_MACOS
+    m_statusItem->updateSpeed(status.payloadDownloadRate, status.payloadUploadRate);
     if (Preferences::instance()->isSpeedInDockEnabled())
     {
         m_badger->updateSpeed(status.payloadDownloadRate, status.payloadUploadRate);
-        m_statusItem->updateSpeed(status.payloadDownloadRate, status.payloadUploadRate);
     }
     else
     {
